@@ -1,6 +1,12 @@
 package com.azeem.entity;
 
-public class Student {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Student implements Serializable
+{
 
     private Integer sid;
     private String sname;

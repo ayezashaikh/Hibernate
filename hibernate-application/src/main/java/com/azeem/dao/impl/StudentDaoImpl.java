@@ -28,19 +28,28 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public void saveStudent(Student student) {
-
+        session = factory.openSession();
+        Transaction transaction = session.beginTransaction();
         try {
-            session = factory.openSession();
-            Transaction transaction = session.beginTransaction();
+
             session.save(student);
             transaction.commit();
         } catch (Exception e) {
-
+            transaction.rollback();
+        } finally {
             session.close();
-            factory.close();
         }
 
 
+    }
+
+
+    public Student loadStudent(int id) {
+        Session session = factory.openSession();
+     //   Student st = session.get(Student.class, id);
+        System.out.println("id" + id);
+        Student st = session.load(Student.class, id);
+        return st;
     }
 
 
