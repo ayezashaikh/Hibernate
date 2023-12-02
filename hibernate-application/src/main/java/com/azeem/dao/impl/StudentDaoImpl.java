@@ -1,6 +1,5 @@
 package com.azeem.dao.impl;
 
-import com.azeem.dao.StudentDao;
 import com.azeem.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,7 +7,6 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.boot.registry.internal.StandardServiceRegistryImpl;
 import org.hibernate.service.ServiceRegistry;
 import org.springframework.stereotype.Repository;
 
@@ -44,12 +42,47 @@ public class StudentDaoImpl implements StudentDao {
     }
 
 
+    @Override
     public Student loadStudent(int id) {
         Session session = factory.openSession();
-     //   Student st = session.get(Student.class, id);
+        //   Student st = session.get(Student.class, id);
         System.out.println("id" + id);
         Student st = session.load(Student.class, id);
         return st;
+    }
+
+    @Override
+    public Student updateStudent(int side, int marks) {
+        Session session = factory.openSession();
+        Student student = session.get(Student.class, side);
+        Transaction transaction = session.beginTransaction();
+        try {
+            student.setMarks(780);
+            session.update(student);
+            transaction.commit();
+            session.close();
+        } catch (Exception e) {
+            transaction.rollback();
+        } finally {
+            session.close();
+        }
+        return student;
+    }
+
+
+    @Override
+    public void deleteStudent(int sid) {
+        Session session = factory.openSession();
+        Student student = session.get(Student.class, sid);
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.delete(student);
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+        } finally {
+            session.close();
+        }
     }
 
 

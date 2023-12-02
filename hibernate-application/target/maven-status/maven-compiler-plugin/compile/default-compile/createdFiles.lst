@@ -1,0 +1,5 @@
+com\azeem\DemoApplication.class
+com\azeem\dao\impl\StudentDaoImpl.class
+com\azeem\client\Test.class
+com\azeem\entity\Student.class
+com\azeem\dao\StudentDao.class
