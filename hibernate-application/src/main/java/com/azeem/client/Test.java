@@ -3,6 +3,7 @@ package com.azeem.client;
 import com.azeem.dao.impl.StudentDao;
 import com.azeem.entity.Student;
 import jakarta.websocket.server.PathParam;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +45,8 @@ public class Test {
         studentDao.updateStudent(sid, marks);
         return "updated successfully";
     }
+
+
 
 
 }

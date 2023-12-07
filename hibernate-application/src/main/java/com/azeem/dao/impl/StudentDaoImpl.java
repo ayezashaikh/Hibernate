@@ -18,6 +18,8 @@ public class StudentDaoImpl implements StudentDao {
     Session session;
 
     public StudentDaoImpl() {
+
+
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
         Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
         factory = metadata.getSessionFactoryBuilder().build();
@@ -83,6 +85,28 @@ public class StudentDaoImpl implements StudentDao {
         } finally {
             session.close();
         }
+    }
+
+
+    public void level1CahceTest() {
+        Session session1 = factory.openSession();
+        Session session2 = factory.openSession();
+
+        Student student = session.get(Student.class, 11011);
+        session.get(Student.class, 22022);
+
+
+        session.clear();  //remove the all the object
+        session.evict(student); //remove specific object
+
+
+        session.get(Student.class, 11011);
+        session2.get(Student.class, 11011);
+
+        session1.close();
+        session2.close();
+
+
     }
 
 
