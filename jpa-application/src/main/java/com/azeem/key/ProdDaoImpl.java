@@ -1,6 +1,6 @@
-package com.azeem.dao.impl;
+package com.azeem.key;
 
-import com.azeem.entity.ProductEntity;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;

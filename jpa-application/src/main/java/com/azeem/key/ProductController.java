@@ -1,8 +1,6 @@
-package com.azeem.controller;
+package com.azeem.key;
 
-import com.azeem.dao.impl.ProdDaoImpl;
-import com.azeem.dao.impl.ProductDao;
-import com.azeem.entity.ProductEntity;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

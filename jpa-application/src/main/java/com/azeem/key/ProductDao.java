@@ -1,6 +1,4 @@
-package com.azeem.dao.impl;
-
-import com.azeem.entity.ProductEntity;
+package com.azeem.key;
 
 public interface ProductDao {
 

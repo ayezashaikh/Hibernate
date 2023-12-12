@@ -1,13 +1,11 @@
-package com.azeem.entity;
+package com.azeem.key;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.SecondaryRow;
 import org.hibernate.annotations.UpdateTimestamp;
-
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

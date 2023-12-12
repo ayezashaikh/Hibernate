@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class StudentCompositeKey implements Serializable
 {
   
-  @Column(name="Serializable")
+  @Column(name="ROLL_NO")
   private Integer rollNumber;
 
   @Column(name="section")
