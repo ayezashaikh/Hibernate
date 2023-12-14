@@ -24,6 +24,4 @@ public class EmployeeController {
     List<EmployeeEntity> fetchEmployees(@PathVariable("sal") Double sal) {
         return employeeDao.executeNamedNativeQuery(sal);
     }
-
-
 }
