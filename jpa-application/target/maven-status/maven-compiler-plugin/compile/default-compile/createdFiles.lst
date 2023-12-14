@@ -1,0 +1,5 @@
+com\azeem\controller\ProductController.class
+com\azeem\dao\impl\ProdDaoImpl.class
+com\azeem\entity\ProductEntity.class
+com\azeem\DemoApplication.class
+com\azeem\dao\impl\ProductDao.class
