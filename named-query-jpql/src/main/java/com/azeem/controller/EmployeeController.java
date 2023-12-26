@@ -24,4 +24,10 @@ public class EmployeeController {
     List<EmployeeEntity> fetchEmployees(@PathVariable("sal") Double sal) {
         return employeeDao.executeNamedNativeQuery(sal);
     }
+
+
+    @GetMapping("/criteria-query")
+    public List<EmployeeEntity> executeCriteriaQuery() {
+        return employeeDao.executeCriteriaQuery();
+    }
 }
