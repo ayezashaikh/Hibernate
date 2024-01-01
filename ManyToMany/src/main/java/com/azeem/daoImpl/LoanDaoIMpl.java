@@ -17,7 +17,7 @@ public class LoanDaoIMpl implements LoanDao {
         EntityManager entityManager = factory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
-        entityManager.persist(loan);
+        entityManager.merge(loan);
         transaction.commit();
     }
 

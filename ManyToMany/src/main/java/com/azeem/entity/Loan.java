@@ -16,7 +16,7 @@ public class Loan {
     @Column(name = "loan_amount")
     private Double loanAmount;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
