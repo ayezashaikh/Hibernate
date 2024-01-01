@@ -37,9 +37,15 @@ public class CategoryDaoImpl implements CategoryDao {
 
         EntityManager manager = factory.createEntityManager();
 
-        CategoriesEntity categoriesEntity = manager.find(CategoriesEntity.class, categoryId);
+        CategoriesEntity categoriesEntity;
 
-        manager.close();
+        try {
+              categoriesEntity = manager.find(CategoriesEntity.class, categoryId);
+        }
+        finally {
+
+            manager.close();
+        }
         return categoriesEntity;
     }
 

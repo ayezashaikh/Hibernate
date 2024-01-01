@@ -60,8 +60,7 @@ public class TestController {
 
     @GetMapping("/product")
     CategoriesEntity fetchCtegory(Integer categoryId) {
-
-        return null;
+        return categoryDao.fetchCtegory(1001);
     }
 
 
