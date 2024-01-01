@@ -15,7 +15,7 @@ public class CategoriesEntity {
     private String categoryName;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id_fk")
     private List<ProductEntity> lstProducts;
 
